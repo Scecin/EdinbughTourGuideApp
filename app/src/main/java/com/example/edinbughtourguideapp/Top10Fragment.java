@@ -48,7 +48,6 @@ public class Top10Fragment extends Fragment implements PlacesAdapter.OnItemClick
         recyclerView.setAdapter(adapter);
         return rootView;
     }
-    boolean hasVector = true;
 
     @Override
     public void onItemClick(Places item) {
