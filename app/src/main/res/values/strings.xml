@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">Tour Guide App</string>
+    <string name="edinburgh">Edinburgh</string>
+    <string name="edinburgh_capital">EDINBURGH</string>
+    <string name="take_tour">Take tour</string>
+    <string name="edinburgh_information">In this guide you’ll find all the necessary and up to date information on the best places to visit in the city.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="top_10">Top 10</string>
+    <string name="museums">Museums</string>
+    <string name="outside">Outside</string>
+    <string name="interest">interest</string>
+
+    <!-- Name of the places Top1o-->
+    <string name="royal_mile">Royal Mile</string>
+    <string name="edinburgh_castle">Edinburgh Castle</string>
+    <string name="calton_hill">Calton Hill</string>
+    <string name="holyrood_palace">Holyrood Palace</string>
+    <string name="st_giles_cathedral">St Giles\' Cathedral</string>
+    <string name="greyfriars_bobby">Greyfriars Bobby</string>
+    <string name="new_town">New Town</string>
+    <string name="victoria_street">Victoria Street</string>
+    <string name="grassmarket">GrassMarket</string>
+    <string name="princes_street">Princes Street</string>
+
+    <!-- Name of the Museums-->
+    <string name="national_museum_of_scotland">Museum of Scotland</string>
+    <string name="museum_of_edinburgh">Museum of Edinburgh</string>
+    <string name="scottish_national_gallery">National Gallery</string>
+    <string name="museum_of_childhood">Museum of Childhood</string>
+    <string name="surgeons_hall_museum">Surgeon\'s Hall Museum</string>
+    <string name="scottish_national_gallery_of_moder_art">National Gallery of Modern Art</string>
+    <string name="scottish_national_portrait_gallery">National Portrait Gallery</string>
+    <string name="the_writers_museum">The Writers\' Museum</string>
+
+    <!-- Name of the Outside-->
+    <string name="princes_street_gardens">Princes Street Gardens</string>
+    <string name="dean_village">Dean Village</string>
+    <string name="royal_botanic_garden">Royal Botanic Garden</string>
+    <string name="holyrood_park">Holyrood Park</string>
+    <string name="water_of_leith">Water of Leith</string>
+    <string name="the_meadows">The Meadows</string>
+    <string name="arthur_seat">Arthur\'s Seat</string>
+    <string name="portobello_beach">Portobello Beach</string>
+    <string name="jupiter_artland">Jupiter Artland</string>
+
+    <!-- Name of the Experiences-->
+    <string name="whisky_experiences">Whisky Experiences</string>
+    <string name="mary_king_close">Mary King\'s Close</string>
+    <string name="stockbridge_market">Stockbridge Market</string>
+    <string name="camera_obscura">Camera Obscura</string>
+    <string name="dynamic_earth">Dynamic Earth</string>
+
+
+    <!-- Information about the Top10 places-->
+    <string name="royal_mile_information">It runs from Edinburgh Castle to the Palace of Holyrood…</string>
+    <string name="edinburgh_castle_information">It stands high on the Castle Rock, overlooking all the city…</string>
+    <string name="calton_hill_information">Calton Hill offers stunning panoramic views of Edinburgh…</string>
+    <string name="holyrood_palace_information">It is the Queen’s official residence in Scotland…</string>
+    <string name="st_giles_cathedral_information">It was built on an old sanctuary dating from the ninth century…</string>
+    <string name="greyfriars_bobby_information">This Skye Terrier guarded over his owner\'s grave for 14 years…</string>
+    <string name="new_town_information">It is a true marvel of urban planning and elegant Neo-Classical architecture…</string>
+    <string name="victoria_street_information">Victoria Street has to be one of the most photographed locations in the city…</string>
+    <string name="grassmarket_information">This area is one of the most vibrant, picturesque and lively areas of the city…</string>
+    <string name="princes_street_information">A busy street lined with shops, historic monuments and restaurants…</string>
+
+    <!-- Information about the Museums-->
+    <string name="national_museum_of_scotland_information">It reveals Scotland’s culture and history up to the present day…</string>
+    <string name="museum_of_edinburgh_information">You can discover the history of the city of Edinburgh…</string>
+    <string name="scottish_national_gallery_information">It features several collections of art from the Renaissance to the Post-Impressionism…</string>
+    <string name="museum_of_childhood_information">Toys, playthings, doll houses and games from several periods…</string>
+    <string name="surgeons_hall_museum_information">Explores the history of medicine and the development of surgery and dentistry…</string>
+    <string name="scottish_national_gallery_of_moder_art_information">It features modern and contemporary art work…</string>
+    <string name="scottish_national_portrait_gallery_information">It explores the history of Scotland through the portraits…</string>
+    <string name="the_writers_museum_information">It commemorates the life and work of three of the most important Scottish writers…</string>
+
+    <!-- Information about the Outside-->
+    <string name="princes_street_gardens_information">It is the most important public park in the heart of Edinburgh…</string>
+    <string name="dean_village_information">It is a pleasant village located on the Water of Leith…</string>
+    <string name="royal_botanic_garden_information">It is made up of over 70 acres of grounds…</string>
+    <string name="holyrood_park_information">It is the largest green space in Edinburgh with 650 acres…</string>
+    <string name="water_of_leith_information">Water of Leith Walkway is a 15 km footpath that runs besides the Water of Leith…</string>
+    <string name="the_meadows_information">It is one of the city\'s most popular green spaces…</string>
+    <string name="arthur_seat_information">It is an extinct volcano which is the main peak of the group of hills in Edinburgh…</string>
+    <string name="portobello_beach_information">A few miles from Edinburgh city centre, is a charming seaside suburb, with two miles of sand…</string>
+    <string name="jupiter_artland_information">It is an award-winning contemporary sculpture garden located just outside Edinburgh…</string>
+
+    <!-- Information about the Experiences-->
+    <string name="whisky_experiences_information">It shows its visitors the making process of whisky…</string>
+    <string name="mary_king_close_information">It is one of Edinburgh’s oldest and most famous closes…</string>
+    <string name="stockbridge_market_information"> It has a feast of fresh produce and artisan bakers and cheese…</string>
+    <string name="camera_obscura_information">It has interactive exhibitions full of optical illusions, a mirror maze, a tunnel, etc… </string>
+    <string name="dynamic_earth_information">It offers its visitors the chance to take a journey to discover all the aspects of the Earth…</string>
+    <string name="title_activity_outside">OutsideActivity</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_main2">MainActivity</string>
+
+</resources>
