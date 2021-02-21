@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Top10Fragment extends Fragment implements PlacesAdapter.OnItemClickListener {
 
-    ArrayList<Place> places;
+    ArrayList<Place> places = new ArrayList<>();
     PlacesAdapter adapter;
 
     public Top10Fragment() {
@@ -25,13 +25,19 @@ public class Top10Fragment extends Fragment implements PlacesAdapter.OnItemClick
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.places_list, container, false);
+        adapter = new PlacesAdapter(this);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        recyclerView.setAdapter(adapter);
+        setPlaces();
 
-        places = new ArrayList<Place>();
+        return rootView;
+    }
 
+    private void setPlaces() {
         places.add(new Place(R.drawable.royal_mile, getString(R.string.royal_mile), getString(R.string.royal_mile_information), R.drawable.ic_border_favorite));
         places.add(new Place(R.drawable.edinburgh_castle, getString(R.string.edinburgh_castle), getString(R.string.edinburgh_castle_information), R.drawable.ic_border_favorite));
         places.add(new Place(R.drawable.calton_hill, getString(R.string.calton_hill), getString(R.string.calton_hill_information), R.drawable.ic_border_favorite));
@@ -43,12 +49,7 @@ public class Top10Fragment extends Fragment implements PlacesAdapter.OnItemClick
         places.add(new Place(R.drawable.grassmarket, getString(R.string.grassmarket), getString(R.string.grassmarket_information), R.drawable.ic_border_favorite));
         places.add(new Place(R.drawable.princes_street, getString(R.string.princes_street), getString(R.string.princes_street_information), R.drawable.ic_border_favorite));
 
-        adapter = new PlacesAdapter(places,this);
-
-        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        recyclerView.setAdapter(adapter);
-        return rootView;
+        adapter.updateData(places);
     }
 
     @Override

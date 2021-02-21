@@ -24,8 +24,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     private final OnItemClickListener onItemClickListener;
 
     // data is passed into the constructor
-    public PlacesAdapter(List<Place> places, OnItemClickListener onItemClickListener) {
-        this.places = places;
+    public PlacesAdapter(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
     @NonNull

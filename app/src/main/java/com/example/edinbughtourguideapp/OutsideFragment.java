@@ -19,6 +19,9 @@ import java.util.ArrayList;
  */
 public class OutsideFragment extends Fragment implements PlacesAdapter.OnItemClickListener {
 
+    ArrayList<Place> places = new ArrayList<Place>();
+    PlacesAdapter adapter;
+
     public OutsideFragment() {
         // Required empty public constructor
     }
@@ -33,8 +36,16 @@ public class OutsideFragment extends Fragment implements PlacesAdapter.OnItemCli
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.places_list, container, false);
+        adapter = new PlacesAdapter(this);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        recyclerView.setAdapter(adapter);
+        setPlaces();
 
-        ArrayList<Place> places = new ArrayList<Place>();
+        return rootView;
+    }
+
+    private void setPlaces() {
 
         places.add(new Place(R.drawable.princes_street_gardens, getString(R.string.princes_street_gardens), getString(R.string.princes_street_gardens_information), R.drawable.ic_border_favorite));
         places.add(new Place(R.drawable.dean_village, getString(R.string.dean_village), getString(R.string.dean_village_information), R.drawable.ic_border_favorite));
@@ -46,16 +57,22 @@ public class OutsideFragment extends Fragment implements PlacesAdapter.OnItemCli
         places.add(new Place(R.drawable.portobello_beach, getString(R.string.portobello_beach), getString(R.string.portobello_beach_information), R.drawable.ic_border_favorite));
         places.add(new Place(R.drawable.jupiter_artland, getString(R.string.jupiter_artland), getString(R.string.jupiter_artland_information), R.drawable.ic_border_favorite));
 
-        PlacesAdapter adapter = new PlacesAdapter(places,this);
-
-        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        recyclerView.setAdapter(adapter);
-        return rootView;
+        adapter.updateData(places);
     }
 
     @Override
     public void onItemClick(Place item) {
-
+        for (int i = 0; i < places.size(); i ++) {
+            Place place = places.get(i);
+            if (place.getImageTitle().equals(item.getImageTitle())) {
+                if (place.getVectorLike() == R.drawable.ic_border_favorite) {
+                    place.setVectorLike(R.drawable.ic_black_favorite);
+                } else {
+                    place.setVectorLike(R.drawable.ic_border_favorite);
+                }
+                places.set(i, place);
+            }
+        }
+        adapter.updateData(places);
     }
 }

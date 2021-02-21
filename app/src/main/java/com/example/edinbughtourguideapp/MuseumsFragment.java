@@ -19,6 +19,9 @@ import java.util.ArrayList;
  */
 public class MuseumsFragment extends Fragment implements PlacesAdapter.OnItemClickListener {
 
+    ArrayList<Place> places = new ArrayList<Place>();
+    PlacesAdapter adapter;
+
     public MuseumsFragment() {
         // Required empty public constructor
     }
@@ -33,8 +36,16 @@ public class MuseumsFragment extends Fragment implements PlacesAdapter.OnItemCli
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.places_list, container, false);
+        adapter = new PlacesAdapter(this);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        recyclerView.setAdapter(adapter);
+        setPlaces();
 
-        ArrayList<Place> places = new ArrayList<Place>();
+        return rootView;
+    }
+
+    private void setPlaces() {
 
         places.add(new Place(R.drawable.national_museum_scotland, getString(R.string.national_museum_of_scotland), getString(R.string.national_museum_of_scotland_information), R.drawable.ic_border_favorite));
         places.add(new Place(R.drawable.museum_of_edinburgh, getString(R.string.museum_of_edinburgh), getString(R.string.museum_of_edinburgh_information), R.drawable.ic_border_favorite));
@@ -45,15 +56,23 @@ public class MuseumsFragment extends Fragment implements PlacesAdapter.OnItemCli
         places.add(new Place(R.drawable.portrait_gallery, getString(R.string.scottish_national_portrait_gallery), getString(R.string.scottish_national_portrait_gallery_information), R.drawable.ic_border_favorite));
         places.add(new Place(R.drawable.writers_museum, getString(R.string.the_writers_museum), getString(R.string.the_writers_museum_information), R.drawable.ic_border_favorite));
 
-        PlacesAdapter adapter = new PlacesAdapter(places, this);
-
-        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        recyclerView.setAdapter(adapter);
-        return rootView;
+        adapter.updateData(places);
     }
+
     @Override
     public void onItemClick(Place item) {
+        for (int i = 0; i< places.size(); i++) {
+            Place place = places.get(i);
+            if (place.getImageTitle().equals(item.getImageTitle())) {
+                if (place.getVectorLike() == R.drawable.ic_border_favorite) {
+                    place.setVectorLike(R.drawable.ic_black_favorite);
+                } else {
+                    place.setVectorLike(R.drawable.ic_border_favorite);
+                }
+                places.set(i, place);
+            }
+        }
+        adapter.updateData(places);
 
     }
 
