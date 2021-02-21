@@ -28,7 +28,4 @@ public class Place {
     public void setVectorLike(int vectorLike) {
         this.vectorLike = vectorLike;
     }
-
-    public void notifyDataSetChanged(int vectorHeart) {
     }
-}
