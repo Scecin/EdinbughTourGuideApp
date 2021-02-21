@@ -1,6 +1,8 @@
 package com.example.edinbughtourguideapp;
 
-public class Places {
+import java.util.UUID;
+
+public class Place {
     private int imageResourceId;
 
     private String imageTitle;
@@ -9,7 +11,7 @@ public class Places {
 
     private int vectorLike;
 
-    public Places(int image, String title, String information, int vectorHeart) {
+    public Place(int image, String title, String information, int vectorHeart) {
         imageResourceId = image;
         imageTitle = title;
         imageInformation = information;
@@ -22,6 +24,10 @@ public class Places {
     public String getImageInformation() {return imageInformation;}
 
     public int getVectorLike() {return vectorLike;}
+
+    public void setVectorLike(int vectorLike) {
+        this.vectorLike = vectorLike;
+    }
 
     public void notifyDataSetChanged(int vectorHeart) {
     }

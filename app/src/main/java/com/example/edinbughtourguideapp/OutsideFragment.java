@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 
 import java.util.ArrayList;
 
@@ -35,17 +34,17 @@ public class OutsideFragment extends Fragment implements PlacesAdapter.OnItemCli
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.places_list, container, false);
 
-        ArrayList<Places> places = new ArrayList<Places>();
+        ArrayList<Place> places = new ArrayList<Place>();
 
-        places.add(new Places(R.drawable.princes_street_gardens, getString(R.string.princes_street_gardens), getString(R.string.princes_street_gardens_information), R.drawable.ic_border_favorite));
-        places.add(new Places(R.drawable.dean_village, getString(R.string.dean_village), getString(R.string.dean_village_information), R.drawable.ic_border_favorite));
-        places.add(new Places(R.drawable.royal_botanic_garden, getString(R.string.royal_botanic_garden), getString(R.string.royal_botanic_garden_information), R.drawable.ic_border_favorite));
-        places.add(new Places(R.drawable.holyrood_park, getString(R.string.holyrood_park), getString(R.string.holyrood_park_information), R.drawable.ic_border_favorite));
-        places.add(new Places(R.drawable.water_of_leith, getString(R.string.water_of_leith), getString(R.string.water_of_leith_information), R.drawable.ic_border_favorite));
-        places.add(new Places(R.drawable.meadows, getString(R.string.the_meadows), getString(R.string.the_meadows_information), R.drawable.ic_border_favorite));
-        places.add(new Places(R.drawable.arthur_seat, getString(R.string.arthur_seat), getString(R.string.arthur_seat_information), R.drawable.ic_border_favorite));
-        places.add(new Places(R.drawable.portobello_beach, getString(R.string.portobello_beach), getString(R.string.portobello_beach_information), R.drawable.ic_border_favorite));
-        places.add(new Places(R.drawable.jupiter_artland, getString(R.string.jupiter_artland), getString(R.string.jupiter_artland_information), R.drawable.ic_border_favorite));
+        places.add(new Place(R.drawable.princes_street_gardens, getString(R.string.princes_street_gardens), getString(R.string.princes_street_gardens_information), R.drawable.ic_border_favorite));
+        places.add(new Place(R.drawable.dean_village, getString(R.string.dean_village), getString(R.string.dean_village_information), R.drawable.ic_border_favorite));
+        places.add(new Place(R.drawable.royal_botanic_garden, getString(R.string.royal_botanic_garden), getString(R.string.royal_botanic_garden_information), R.drawable.ic_border_favorite));
+        places.add(new Place(R.drawable.holyrood_park, getString(R.string.holyrood_park), getString(R.string.holyrood_park_information), R.drawable.ic_border_favorite));
+        places.add(new Place(R.drawable.water_of_leith, getString(R.string.water_of_leith), getString(R.string.water_of_leith_information), R.drawable.ic_border_favorite));
+        places.add(new Place(R.drawable.meadows, getString(R.string.the_meadows), getString(R.string.the_meadows_information), R.drawable.ic_border_favorite));
+        places.add(new Place(R.drawable.arthur_seat, getString(R.string.arthur_seat), getString(R.string.arthur_seat_information), R.drawable.ic_border_favorite));
+        places.add(new Place(R.drawable.portobello_beach, getString(R.string.portobello_beach), getString(R.string.portobello_beach_information), R.drawable.ic_border_favorite));
+        places.add(new Place(R.drawable.jupiter_artland, getString(R.string.jupiter_artland), getString(R.string.jupiter_artland_information), R.drawable.ic_border_favorite));
 
         PlacesAdapter adapter = new PlacesAdapter(places,this);
 
@@ -56,7 +55,7 @@ public class OutsideFragment extends Fragment implements PlacesAdapter.OnItemCli
     }
 
     @Override
-    public void onItemClick(Places item) {
+    public void onItemClick(Place item) {
 
     }
 }

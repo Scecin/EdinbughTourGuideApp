@@ -9,22 +9,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 
 public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder> {
 
 
     public interface OnItemClickListener {
-        void onItemClick(Places item);
+        void onItemClick(Place item);
     }
 
-    private List<Places> places;
+    private List<Place> places;
     private final OnItemClickListener onItemClickListener;
 
     // data is passed into the constructor
-    public PlacesAdapter(List<Places> places, OnItemClickListener onItemClickListener) {
+    public PlacesAdapter(List<Place> places, OnItemClickListener onItemClickListener) {
         this.places = places;
         this.onItemClickListener = onItemClickListener;
     }
@@ -37,7 +37,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull PlacesAdapter.ViewHolder holder, int position) {
-        Places currentPlace = places.get(position);
+        Place currentPlace = places.get(position);
         holder.bind(currentPlace, onItemClickListener);
     }
 
@@ -60,7 +60,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
             vectorView = itemView.findViewById(R.id.vector_image_view);
         }
 
-        void bind(Places currentPlace, final OnItemClickListener onItemClickListener) {
+        void bind(Place currentPlace, final OnItemClickListener onItemClickListener) {
             imageView.setImageResource(currentPlace.getImageResourceId());
             titleTextView.setText(currentPlace.getImageTitle());
             informationTextView.setText(currentPlace.getImageInformation());
@@ -70,7 +70,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
             }
         }
 
-    public void updateData(List<Places> newData) {
+    public void updateData(List<Place> newData) {
         places = newData;
         notifyDataSetChanged();
     }
